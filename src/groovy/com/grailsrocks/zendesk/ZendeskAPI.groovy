@@ -39,6 +39,10 @@ class ZendeskAPI {
                 }
             }
             
+            response.'401' = { resp ->
+                throw new AuthFailureException("Cannot make binary post request")
+            }
+            
             response.'201' = { resp ->
                 log.debug "Zendesk API post binary file to $url returned 201 Created"
                 return resp
@@ -67,6 +71,10 @@ class ZendeskAPI {
                 }
             }
             
+            response.'401' = { resp ->
+                throw new AuthFailureException("Cannot make post request")
+            }
+            
             response.'201' = { resp ->
                 log.debug "Zendesk API post to $url returned 201 Created"
                 return resp
@@ -88,6 +96,10 @@ class ZendeskAPI {
                 for (entry in args.headers) {
                     headers."${entry.key}" = entry.value
                 }
+            }
+            
+            response.'401' = { resp ->
+                throw new AuthFailureException("Cannot make get request")
             }
             
             response.'200' = { resp, json ->
