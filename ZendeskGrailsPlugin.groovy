@@ -1,6 +1,6 @@
 class ZendeskGrailsPlugin {
     // the plugin version
-    def version = "1.0.3"
+    def version = "1.0.4"
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "1.3 > *"
     // the other plugins this plugin depends on
@@ -23,7 +23,7 @@ Interface to Zendesk support system via their API
     // URL to the plugin's documentation
     def documentation = "http://grails.org/plugin/zendesk"
 
-    def license = "APACHE 2"
+    def license = "APACHE"
 
     def organization = [ name: "Grailsrocks", url: "http://grailsrocks.com/" ]
 

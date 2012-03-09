@@ -167,7 +167,7 @@ class ZendeskAPI {
     
     def search(query) {
         def resp = getRequest('/api/v1/search.json', [query:[query:query]])
-        if (resp) {
+        if (resp != null) {
             return resp
         } else {
             log.error "Could not search zendesk tickets"
@@ -177,7 +177,7 @@ class ZendeskAPI {
     
     def getRequests() {
         def resp = getRequest('/requests.json')
-        if (resp) {
+        if (resp != null) {
             return resp
         } else {
             log.error "Could not get zendesk tickets"
